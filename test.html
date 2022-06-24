@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Wholesale Investor Calculator</title>
+<link rel="stylesheet" type ="text/css" href="./test2.css"/>
+</head>
+<body>
+<div class = heading>
+    <h1>Wholesale Investor Calculator</h1>
+</div>
+<!-- Linking JS Scripts in HTML -->
+<script>
+    //hides startPage div block and displays q1.1
+function hideStartDIV() {
+    var x = document.getElementById("startPage");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+    var y = document.getElementById("q1.1");
+    if (y.style.display === "none") {
+        y.style.display = "inherit";
+    } else {
+        y.style.display = "inherit";
+    }
+}
+function yesDIV1() {
+    var x = document.getElementById("q1.1");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+    var y = document.getElementById("r1");
+    if (y.style.display === "none") {
+        y.style.display = "inherit";
+    } else {
+        y.style.display = "inherit";
+    }
+}
+</script>
+<script>
+    var questionSet1 = [
+    {
+        question: "Are you a registered investment business, entity, or government agency?",
+        note: "Registered with the Financial Service Providers Register",
+        answers: ["Yes", "No"],
+    },
+    {
+        question: "Does your net assets or turnover exceed NZD $5 Million?",
+        note: "",
+        answers: ["Yes", "No"],   
+    },
+    {
+        question: "During the last 2 years, has your investment portfolio or net assets exceeded NZD $1 Million?",
+        note: "",
+        answers: ["Yes", "No"],   
+    }
+    ]
+    var questionSet2 = [
+    {
+        question: "Is the offering in question a derivitive of at least NZD $5 million?",
+        note: "Derivative: Bonds, Commodoties, Currencies, Stocks",
+        answers: ["Yes", "No"],
+    },
+    {
+        question: "Is the minimum investment amount for the investment offering above NZD $750 thousand?",
+        note: "",
+        answers: ["Yes", "No"],
+    },
+    {
+        question: "Does this investment amount, plus any previous investments with the provider, add up to atleast NZD $750 thousand?",
+        note: "",
+        answers: ["Yes", "No"],
+    },
+    {
+        question: "What experience in the transaction or service that you're enquiring about?",
+        note: "",
+        answers: [" Less Than 1 Year", "1-2 Years", "More Than 2 Years"],
+    }
+    ]
+    
+
+</script>
+<div id="startPage" class = "calc-container">
+    <h2>Start the calculator to find out whether you're an eligible wholesale investor</h2>
+    <button class = "button" onclick="hideStartDIV()">Start</button>
+</div>
+<!-- Question and results display settings are hidden in the CSS file -->
+<!-- The rest of the CSS is is just aesthetic, still figuring out how to make things pretty fml -->
+<div id="q1.1" class = "q11-container">
+    <h2>Are you an investment business, entity, or government agency?</h2>
+    <button class = "button" onclick="yesDIV1()">Yes</button>
+    <button class = "button" onclick="noDIV1()">No</button>
+</div>
+<div id="r1" class = "r1-container">
+    <h2>You are elligible for all wholesale investor offerings under the new FMCA</h2>
+    <button class = "button" onclick="hideDIV()"><a href="https://www.fma.govt.nz/investors/ways-to-invest/wholesale-investors/">FMA Website</a></button>
+</div>
+</body>
+</html>
